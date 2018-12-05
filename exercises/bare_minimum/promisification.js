@@ -15,7 +15,7 @@ var getGitHubProfile = function(user, callback) {
   var options = {
     url: 'https://api.github.com/users/' + user,
     headers: { 'User-Agent': 'request' },
-    json: true  // will JSON.parse(body) for us
+    json: true // will JSON.parse(body) for us
   };
 
   request.get(options, function(err, res, body) {
@@ -29,7 +29,7 @@ var getGitHubProfile = function(user, callback) {
   });
 };
 
-const getGitHubProfileAsync = Promise.promisify(getGitHubProfile);
+var getGitHubProfileAsync = Promise.promisify(getGitHubProfile);
 
 
 // (2) Asyncronous token generation
